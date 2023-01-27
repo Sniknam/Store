@@ -1,8 +1,9 @@
 .check{
     display: block;
     color: black;
-    padding: 16px;
+    padding: 10px;
     text-decoration: none;
+ 
 }
 .sidebar{
     display: block;
@@ -10,12 +11,22 @@
 }
 
 .checkbox{
-    border: 1px red  solid;
-    display: block;
-    width: 20px;
-    border-radius: 50%;
+   padding-left: 10px;
 }
 
 label {
     display: block;
+}
+
+.sale{
+   border-radius: 10px;
+   text-align: center;
+
+   
+}
+
+.card-image{
+    width: 200px;
+    margin: auto;
+    margin-top: 20px;
 }
