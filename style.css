@@ -30,3 +30,19 @@ label {
     margin: auto;
     margin-top: 20px;
 }
+
+.nav{
+    height: 100%;
+        width: 160px;
+        position: fixed;
+        z-index: 1;
+        overflow-x: hidden;
+        padding-top: 20px;
+        margin-top: 20px;
+}
+
+ li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    width: 100%;
+}
