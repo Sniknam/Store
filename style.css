@@ -1,0 +1,19 @@
+
+.nav{
+    margin-left: auto;
+    margin-right: auto;
+}
+.search{
+    width: 50%;
+    height: 20px;
+    margin-left: auto;
+    margin-right:auto ;
+
+}
+
+
+
+
+.checked{
+    color:rgb(255, 179, 39);
+}
