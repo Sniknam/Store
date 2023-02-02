@@ -25,19 +25,19 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 20px;
-    background-color: blue;
-        margin-left: 160px;
+ justify-content: space-evenly;
+        margin-left: 200px;
     z-index: 2;
     height: 100vh;
 }
 .side-bar{
     height: 100%;
-        width: 160px;
+        width: 200px;
         position: fixed;
         overflow-x: hidden;
         padding-top: 0px;
         margin-top: 20px;
-        background-color: red;
+        
        z-index: 1;
 
 }
@@ -55,9 +55,11 @@
 
 .card{
     width: 300px;
+    height: 400px;
     border: 1px solid black;
     padding: 10px;
-    margin-left: 160px;
+
+
 }
 
 .img-card{
