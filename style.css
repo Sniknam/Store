@@ -29,6 +29,7 @@
         margin-left: 200px;
     z-index: 2;
     height: 100vh;
+    margin-top: 50px;
 }
 .side-bar{
     height: 100%;
@@ -51,6 +52,16 @@
     margin-right: 20px;
     
 }
+ 
+.no-bullets li{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.checkbox{
+    width: 30px;
+    height: 20px;
+}
 
 
 .card{
@@ -58,8 +69,18 @@
     height: 400px;
     border: 1px solid black;
     padding: 10px;
+border-radius: 5px;
 
+}
 
+.sale {
+    background-color:red;
+    color: white;
+    width: 40px;
+    border-radius: 5px;
+    display: block;
+    height: 20px;
+    text-align: center;
 }
 
 .img-card{
@@ -75,4 +96,22 @@
 
 .checked{
     color:rgb(255, 179, 39);
+    margin-top: 20px;
+}
+.price{
+    margin-top: 20px;
+}
+.price-change{
+    margin-left: 10px;
+    text-decoration: line-through;
+    color: gray;
+}
+.add-btn{
+    margin-left: 147px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 50px;
 }
