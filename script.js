@@ -4,6 +4,7 @@ async function getData() {
   const response = await data.json();
   console.log(response.products);
 
+  const containerElm = document.getElementById("container");
   const cardData = document.getElementById("cardData");
   for (let i = 0; i < response.products.length; i++) {
     const selectedItemObj = response.products[i];
@@ -25,12 +26,26 @@ async function getData() {
     informationElm.appendChild(infoTextElm);
     cardDataElm.appendChild(informationElm);
 
-    container.appendChild(cardDataElm);
+    containerElm.appendChild(cardDataElm);
+
+    let starRaringElm = document.createElement("p");
+    const starNumElm = document.createTextNode(selectedItemObj.rating);
+    starRaringElm.appendChild(starNumElm);
+    cardDataElm.appendChild(starRaringElm);
+
+    let priceElm = document.createElement("p");
+    const priceNumElm = document.createTextNode(selectedItemObj.price);
+    priceElm.appendChild(priceNumElm);
+    cardDataElm.appendChild(priceElm);
+
+    let priceChangeElm = document.createElement("p");
+    const discountElm = document.createTextNode(
+      selectedItemObj.discountPercentage
+    );
+
+    priceChangeElm.appendChild(discountElm);
+    cardDataElm.appendChild(priceChangeElm);
   }
 }
 
-function printData(array) {
-  for (let i = 0; i < array.length; i++) {}
-}
 getData();
-const data = document.getElementById("cardData");
