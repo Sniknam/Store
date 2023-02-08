@@ -11,6 +11,14 @@ async function getData() {
     const cardDataElm = document.createElement("div");
     cardDataElm.classList.add("card");
 
+    // sale sign
+    const saleSignElm = document.createElement("span");
+    const saleTextElm = document.createTextNode("sale");
+    saleSignElm.appendChild(saleTextElm);
+    saleSignElm.classList.add("sale");
+    console.log(saleSignElm);
+    cardDataElm.appendChild(saleSignElm);
+
     // add image
     const myImage = new Image(200, 100);
     myImage.classList.add("img-card");
@@ -60,6 +68,12 @@ async function getData() {
     priceElm.appendChild(priceNumElm);
     priceCountainer.appendChild(priceElm);
     cardDataElm.appendChild(priceCountainer);
+
+    const addBtn = document.createElement("button");
+    const addTextBtn = document.createTextNode("+Add");
+    addBtn.classList.add("add-btn");
+    addBtn.appendChild(addTextBtn);
+    priceCountainer.appendChild(addBtn);
   }
 }
 
