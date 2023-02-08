@@ -100,11 +100,14 @@ border-radius: 5px;
 }
 .price{
     margin-top: 20px;
+    display: inline;
+
 }
 .price-change{
     margin-left: 10px;
     text-decoration: line-through;
     color: gray;
+    display: inline;
 }
 .add-btn{
     margin-left: 147px;

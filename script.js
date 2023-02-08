@@ -37,22 +37,29 @@ async function getData() {
     starRaringElm.appendChild(starNumElm);
     cardDataElm.appendChild(starRaringElm);
 
-    //add price
+    const priceCountainer = document.createElement("div");
+    priceCountainer.classList.add("price");
+
+    //add  price and price with discount
     let priceElm = document.createElement("p");
-    let price = selectedItemObj.price;
-    const priceNumElm = document.createTextNode(price);
-    priceElm.appendChild(priceNumElm);
-    cardDataElm.appendChild(priceElm);
+    priceElm.classList.add("price-change");
 
-    //add discount
     let priceChangeElm = document.createElement("p");
-    let discount = selectedItemObj.discountPercentage;
-    const discountElm = document.createTextNode(discount);
-    const discountCalc = parseInt(price - (price * discount) / 100);
-    discountElm.appendChild(discountCalc);
+    priceChangeElm.classList.add("price");
 
-    priceChangeElm.appendChild(discountElm);
-    cardDataElm.appendChild(priceChangeElm);
+    let discount = selectedItemObj.discountPercentage;
+    let price = selectedItemObj.price;
+    //add discount
+    const discountCalc = parseInt(price - (price * discount) / 100);
+    const discountCalcElm = document.createTextNode(discountCalc);
+    priceChangeElm.appendChild(discountCalcElm);
+    priceCountainer.appendChild(priceChangeElm);
+    //add price
+    const priceNumElm = document.createTextNode(price);
+
+    priceElm.appendChild(priceNumElm);
+    priceCountainer.appendChild(priceElm);
+    cardDataElm.appendChild(priceCountainer);
   }
 }
 
