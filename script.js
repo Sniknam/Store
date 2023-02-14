@@ -16,7 +16,6 @@ async function getData() {
     const saleTextElm = document.createTextNode("sale");
     saleSignElm.appendChild(saleTextElm);
     saleSignElm.classList.add("sale");
-    console.log(saleSignElm);
     cardDataElm.appendChild(saleSignElm);
 
     // add image
@@ -32,18 +31,38 @@ async function getData() {
     cardDataElm.appendChild(titleElm);
 
     // add description
-    let informationElm = document.createElement("p");
+    const infoContainer = document.createElement("div");
+    const informationElm = document.createElement("p");
     const infoTextElm = document.createTextNode(selectedItemObj.description);
     informationElm.appendChild(infoTextElm);
-    cardDataElm.appendChild(informationElm);
+    infoContainer.appendChild(informationElm);
+    cardDataElm.appendChild(infoContainer);
 
-    containerElm.appendChild(cardDataElm);
+    function printInfo(str, charecter) {
+      const sliced = str.slice(0, charecter) + "...";
+      const slicedElm = document.createTextNode(sliced);
+      infoTextElm.appendChild(slicedElm);
+
+      // infoTextElm.appendChild(sliced);
+
+      console.log(infoTextElm);
+    }
+
+    printInfo(selectedItemObj.description, 10);
 
     //add rating
+    const ratingContainer = document.createElement("div");
+    const ratingStar = document.createElement("span");
+    ratingStar.classList.add("fa");
+    ratingStar.classList.add("fa-star");
+    ratingStar.classList.add("checked");
+
+    ratingContainer.appendChild(ratingStar);
     let starRaringElm = document.createElement("p");
     const starNumElm = document.createTextNode(selectedItemObj.rating);
     starRaringElm.appendChild(starNumElm);
-    cardDataElm.appendChild(starRaringElm);
+    ratingContainer.appendChild(starRaringElm);
+    cardDataElm.appendChild(ratingContainer);
 
     const priceCountainer = document.createElement("div");
     priceCountainer.classList.add("price");
@@ -74,6 +93,8 @@ async function getData() {
     addBtn.classList.add("add-btn");
     addBtn.appendChild(addTextBtn);
     priceCountainer.appendChild(addBtn);
+
+    containerElm.appendChild(cardDataElm);
   }
 }
 
