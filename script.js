@@ -33,22 +33,14 @@ async function getData() {
     // add description
     const infoContainer = document.createElement("div");
     const informationElm = document.createElement("p");
-    const infoTextElm = document.createTextNode(selectedItemObj.description);
+    const sliced = selectedItemObj.description.slice(0, 30) + "...";
+
+    console.log(typeof sliced, sliced);
+
+    const infoTextElm = document.createTextNode(sliced);
     informationElm.appendChild(infoTextElm);
     infoContainer.appendChild(informationElm);
     cardDataElm.appendChild(infoContainer);
-
-    function printInfo(str, charecter) {
-      const sliced = str.slice(0, charecter) + "...";
-      const slicedElm = document.createTextNode(sliced);
-      infoTextElm.appendChild(slicedElm);
-
-      // infoTextElm.appendChild(sliced);
-
-      console.log(infoTextElm);
-    }
-
-    printInfo(selectedItemObj.description, 10);
 
     //add rating
     const ratingContainer = document.createElement("div");
