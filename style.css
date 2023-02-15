@@ -101,18 +101,25 @@ margin-bottom: 10px;
     
 }
 .price{
+display: flex;
+flex-direction:row ;
     margin-top: 20px;
-    display: inline;
+ align-items: baseline;
+ gap: 10px ;
 
 }
+
+.currenr-price{
+    display: inline;
+}
+
 .price-change{
-    margin-left: 10px;
     text-decoration: line-through;
     color: gray;
     display: inline;
 }
 .add-btn{
-    margin-left: 185px;
+    margin-left: 175px;
     background-color: green;
     color: white;
     border: none;

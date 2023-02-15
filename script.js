@@ -64,7 +64,7 @@ async function getData() {
     priceElm.classList.add("price-change");
 
     let priceChangeElm = document.createElement("p");
-    priceChangeElm.classList.add("price");
+    priceChangeElm.classList.add("currenr-price");
 
     let discount = selectedItemObj.discountPercentage;
     let price = selectedItemObj.price;
