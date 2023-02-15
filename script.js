@@ -1,11 +1,22 @@
+async function getCategories() {
+  const categories = await fetch("https://dummyjson.com/products/categories");
+  console.log(categories);
+  const result = await categories.json();
+  console.log(result);
+
+  const sideContainer = document.getElementById("side-container");
+  for (let i = 0; i < result.length; i++) {
+    console.log(result[i]);
+  }
+}
+getCategories();
+
 async function getData() {
   const data = await fetch("https://dummyjson.com/products");
-  console.log(data);
+
   const response = await data.json();
-  console.log(response.products);
 
   const containerElm = document.getElementById("container");
-  const cardData = document.getElementById("cardData");
   for (let i = 0; i < response.products.length; i++) {
     const selectedItemObj = response.products[i];
     const cardDataElm = document.createElement("div");
@@ -34,8 +45,6 @@ async function getData() {
     const infoContainer = document.createElement("div");
     const informationElm = document.createElement("p");
     const sliced = selectedItemObj.description.slice(0, 30) + "...";
-
-    console.log(typeof sliced, sliced);
 
     const infoTextElm = document.createTextNode(sliced);
     informationElm.appendChild(infoTextElm);
