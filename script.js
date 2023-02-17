@@ -5,9 +5,32 @@ async function getCategories() {
   console.log(result);
 
   const sideContainer = document.getElementById("side-container");
+
+  // title
+  const titleElm = document.createElement("h2");
+  const titleTextElm = document.createTextNode("categories");
+
+  titleElm.appendChild(titleTextElm);
+  sideContainer.appendChild(titleElm);
+  console.log(titleElm, titleTextElm);
+
+  const categoriesUlElm = document.createElement("ul");
+  categoriesUlElm.classList.add("list");
   for (let i = 0; i < result.length; i++) {
-    console.log(result[i]);
+    const categoryStr = result[i];
+
+    const categoriesElm = document.createElement("li");
+    categoriesElm.classList.add("no-bullets");
+    // categoriesElm.classList.add("checkbox");
+
+    const categoriesTexElm = document.createTextNode(categoryStr);
+
+    categoriesElm.appendChild(categoriesTexElm);
+    categoriesUlElm.appendChild(categoriesElm);
+    sideContainer.appendChild(categoriesUlElm);
   }
+  sideContainer.appendChild(categoriesUlElm);
+  console.log(sideContainer);
 }
 getCategories();
 

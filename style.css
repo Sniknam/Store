@@ -31,6 +31,8 @@
     height: 100vh;
     margin-top: 50px;
 }
+
+
 .side-bar{
     height: 100%;
         width: 200px;
@@ -45,7 +47,7 @@
 
 
 
-.no-bullets {
+.list {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -53,7 +55,7 @@
     
 }
  
-.no-bullets li{
+.no-bullets{
     margin-top: 10px;
     margin-bottom: 5px;
 }
