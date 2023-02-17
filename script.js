@@ -12,25 +12,30 @@ async function getCategories() {
 
   titleElm.appendChild(titleTextElm);
   sideContainer.appendChild(titleElm);
-  console.log(titleElm, titleTextElm);
 
+  // create ul, add style
   const categoriesUlElm = document.createElement("ul");
   categoriesUlElm.classList.add("list");
+
+  // loop to get data
   for (let i = 0; i < result.length; i++) {
     const categoryStr = result[i];
 
+    // create li , add text and style
     const categoriesElm = document.createElement("li");
     categoriesElm.classList.add("no-bullets");
-    // categoriesElm.classList.add("checkbox");
-
     const categoriesTexElm = document.createTextNode(categoryStr);
 
+    // create input , set attribut
+    const checkBoxInputElm = document.createElement("input");
+    checkBoxInputElm.setAttribute("type", "checkbox");
+
+    // appendChild input,li,ul to container
+    categoriesElm.appendChild(checkBoxInputElm);
     categoriesElm.appendChild(categoriesTexElm);
     categoriesUlElm.appendChild(categoriesElm);
     sideContainer.appendChild(categoriesUlElm);
   }
-  sideContainer.appendChild(categoriesUlElm);
-  console.log(sideContainer);
 }
 getCategories();
 
