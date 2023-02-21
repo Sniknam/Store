@@ -2,11 +2,10 @@ async function getCategories() {
   const categories = await fetch("https://dummyjson.com/products/categories");
   console.log(categories);
   const result = await categories.json();
-  console.log(result);
 
   const sideContainer = document.getElementById("side-container");
 
-  // title
+  //side title
   const titleElm = document.createElement("h2");
   const titleTextElm = document.createTextNode("categories");
 
@@ -39,14 +38,19 @@ async function getCategories() {
 }
 getCategories();
 
+let productData = [];
 async function getData() {
   const data = await fetch("https://dummyjson.com/products");
-
   const response = await data.json();
+  productData = response.products;
 
+  printData(response.products);
+}
+
+function printData(productsArr) {
   const containerElm = document.getElementById("container");
-  for (let i = 0; i < response.products.length; i++) {
-    const selectedItemObj = response.products[i];
+  for (let i = 0; i < productsArr.length; i++) {
+    const selectedItemObj = productsArr[i];
     const cardDataElm = document.createElement("div");
     cardDataElm.classList.add("card");
 
@@ -63,7 +67,7 @@ async function getData() {
     myImage.src = "thumbnail.jpg";
     cardDataElm.appendChild(myImage);
 
-    // add title
+    // add card title
     let titleElm = document.createElement("h3");
     const titleTextElm = document.createTextNode(selectedItemObj.title);
     titleElm.appendChild(titleTextElm);
