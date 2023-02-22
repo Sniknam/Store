@@ -1,3 +1,32 @@
+// function search(e) {
+//   const inputValue = document.querySelector(".search").value;
+//   const newProductData = filterInput(productData, inputValue);
+//   input.addEventListener("input", newProductData);
+
+//   printData(newProductData);
+// }
+
+function filterInput(productData, str) {
+  const result = [];
+  for (let i = 0; i < productData.length; i++) {
+    // captital sensitive
+    const productName = productData[i].product.toUpperCase();
+    const searchPhrase = str.toUpperCase();
+    // search only two charater
+    if (productName.includes(searchPhrase)) {
+      result.push(productData[i]);
+    } else if (str === productData[i].color) {
+      result.push(productData[i]);
+    } else if (Number(str) === productData[i].price) {
+      result.push(productData[i]);
+    } else if (!str) {
+      result.push(productData[i]);
+    }
+  }
+  return result;
+  console.log(result);
+}
+
 async function getCategories() {
   const categories = await fetch("https://dummyjson.com/products/categories");
   console.log(categories);
