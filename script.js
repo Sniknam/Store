@@ -1,35 +1,37 @@
-// function search(e) {
-//   const inputValue = document.querySelector(".search").value;
-//   const newProductData = filterInput(productData, inputValue);
-//   input.addEventListener("input", newProductData);
+const inputValue = document.getElementById("search");
+// const inpuLog = document.getElementById("search-input");
+// console.log(inpuLog);
+inputValue.addEventListener("input", updateValue);
 
-//   printData(newProductData);
-// }
+function updateValue(e) {
+  const containerElm = document.getElementById("container");
 
-function filterInput(productData, str) {
+  const searchStr = e.target.value; // same as const searchStr = inputValue.value
+  const newFilterProduct = filterInput(productData, searchStr);
+  console.log(newFilterProduct);
+  // clear container
+  containerElm.innerHTML = "";
+  // print filter data in HTML
+  printData(newFilterProduct);
+}
+function filterInput(arr, str) {
   const result = [];
-  for (let i = 0; i < productData.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     // captital sensitive
-    const productName = productData[i].product.toUpperCase();
+    const productName = arr[i].title.toUpperCase();
     const searchPhrase = str.toUpperCase();
     // search only two charater
     if (productName.includes(searchPhrase)) {
-      result.push(productData[i]);
-    } else if (str === productData[i].color) {
-      result.push(productData[i]);
-    } else if (Number(str) === productData[i].price) {
-      result.push(productData[i]);
+      result.push(arr[i]);
     } else if (!str) {
-      result.push(productData[i]);
+      result.push(arr[i]);
     }
   }
   return result;
-  console.log(result);
 }
 
 async function getCategories() {
   const categories = await fetch("https://dummyjson.com/products/categories");
-  console.log(categories);
   const result = await categories.json();
 
   const sideContainer = document.getElementById("side-container");
