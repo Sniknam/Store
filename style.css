@@ -95,7 +95,10 @@ margin-bottom: 10px;
 }
 
 
-
+.fa-star-half{
+    color: rgb(255, 179, 39);
+        margin-top: 20px;
+}
 
 .checked{
     color:rgb(255, 179, 39);

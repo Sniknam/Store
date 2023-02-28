@@ -1,6 +1,4 @@
 const inputValue = document.getElementById("search");
-// const inpuLog = document.getElementById("search-input");
-// console.log(inpuLog);
 inputValue.addEventListener("input", updateValue);
 
 function updateValue(e) {
@@ -116,16 +114,108 @@ function printData(productsArr) {
 
     //add rating
     const ratingContainer = document.createElement("div");
-    const ratingStar = document.createElement("span");
-    ratingStar.classList.add("fa");
-    ratingStar.classList.add("fa-star");
-    ratingStar.classList.add("checked");
 
-    ratingContainer.appendChild(ratingStar);
-    let starRaringElm = document.createElement("p");
+    // const starChecked = document.createElement("span");
+    // starChecked.classList.add("fa");
+    // starChecked.classList.add("fa-star");
+    // starChecked.classList.add("checked");
+
+    // const starChecked1 = document.createElement("span");
+    // starChecked1.classList.add("fa");
+    // starChecked1.classList.add("fa-star");
+    // starChecked1.classList.add("checked");
+
+    // const starChecked2 = document.createElement("span");
+    // starChecked2.classList.add("fa");
+    // starChecked2.classList.add("fa-star");
+    // starChecked2.classList.add("checked");
+
+    // const starChecked3 = document.createElement("span");
+    // starChecked3.classList.add("fa");
+    // starChecked3.classList.add("fa-star");
+    // starChecked3.classList.add("checked");
+
+    // ratingContainer.appendChild(starChecked);
+    // ratingContainer.appendChild(starChecked1);
+    // ratingContainer.appendChild(starChecked2);
+    // ratingContainer.appendChild(starChecked3);
+
+    // const starUnchecked = document.createElement("span");
+    // starUnchecked.classList.add("fa");
+    // starUnchecked.classList.add("fa-star");
+    // // ratingContainer.appendChild(starUnchecked);
+
+    // const starHalf = document.createElement("span");
+
+    // starHalf.classList.add("fa");
+    // starHalf.classList.add("fa-star-half");
+    // ratingContainer.appendChild(starHalf);
+
+    // 4.5
+    // 2.8
+    // 3.2
+    // 2
+    let fullCount = Math.floor(selectedItemObj.rating);
+
+    let halfCount = 1;
+    let emptyCount = 1;
+
+    for (let i = 0; i < fullCount; i++) {
+      console.log(i, fullCount);
+      if (i <= fullCount) {
+        const starChecked = document.createElement("span");
+        starChecked.classList.add("fa");
+        starChecked.classList.add("fa-star");
+        starChecked.classList.add("checked");
+        ratingContainer.appendChild(starChecked);
+      }
+    }
+
+    for (let i = 0; i < halfCount; i++) {
+      if (i < fullCount) {
+        const starHalf = document.createElement("span");
+        starHalf.classList.add("fa");
+        starHalf.classList.add("fa-star-half");
+        ratingContainer.appendChild(starHalf);
+      }
+    }
+
+    for (let i = 0; i < emptyCount; i++) {
+      if (i === emptyCount) {
+        const starUnchecked = document.createElement("span");
+        starUnchecked.classList.add("fa");
+        starUnchecked.classList.add("fa-star");
+        ratingContainer.appendChild(starUnchecked);
+      }
+    }
+
+    // let halfCount , let fullCount , let emptyCount
+    // for(let i=0; i< fullCount; i++){}
+    // Soroush Bk11:41 AM
+    // for(let i=0; i< halfCount; i++){}
+
+    // function starRating(score) {
+    //   let roundRating = Math.floor(selectedItemObj.rating);
+    //   console.log(typeof roundRating, roundRating);
+
+    //   for (let i = 1; i <= 5; i++) {
+    //     if (i === score) {
+    //       starChecked++;
+    //       ratingContainer.appendChild(starChecked);
+    //     } else if (i > score) {
+    //       starUnchecked++ + starHalf;
+    //     } else {
+    //       starUnchecked;
+    //     }
+    //   }
+    // }
+
+    // starRating(ratingContainer);
+
+    let starRatingText = document.createElement("p");
     const starNumElm = document.createTextNode(selectedItemObj.rating);
-    starRaringElm.appendChild(starNumElm);
-    ratingContainer.appendChild(starRaringElm);
+    starRatingText.appendChild(starNumElm);
+    ratingContainer.appendChild(starRatingText);
     cardDataElm.appendChild(ratingContainer);
 
     const priceCountainer = document.createElement("div");
