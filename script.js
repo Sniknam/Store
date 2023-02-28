@@ -181,7 +181,7 @@ function printData(productsArr) {
     }
 
     for (let i = 0; i < emptyCount; i++) {
-      if (i === emptyCount) {
+      if (i === emptyCount && i < fullCount) {
         const starUnchecked = document.createElement("span");
         starUnchecked.classList.add("fa");
         starUnchecked.classList.add("fa-star");
