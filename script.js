@@ -158,7 +158,7 @@ function printData(productsArr) {
     let fullCount = Math.floor(selectedItemObj.rating);
 
     let halfCount = 1;
-    let emptyCount = 1;
+    let emptyCount = 5;
 
     for (let i = 0; i < fullCount; i++) {
       console.log(i, fullCount);
@@ -181,7 +181,7 @@ function printData(productsArr) {
     }
 
     for (let i = 0; i < emptyCount; i++) {
-      if (i === emptyCount && i < fullCount) {
+      if (i === emptyCount) {
         const starUnchecked = document.createElement("span");
         starUnchecked.classList.add("fa");
         starUnchecked.classList.add("fa-star");
